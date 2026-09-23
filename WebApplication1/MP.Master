@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MP.master.cs" Inherits="WebApplication1.MP" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>PÁGINA MAESTRA</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        
+        .titulo-farmacia {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+        .auto-style4 {
+            height: 80px;
+        }
+        .menu-grande {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+       
+        .auto-style5 {
+            height: 42px;
+        }
+        .auto-style6 {
+            width: 100%;
+            height: 42px;
+        }
+
+       
+    </style>
+</head>
+<body>
+     <form id="form1" runat="server">
+    <table style="width:100%;">
+        <tr>
+            <td class="auto-style2 titulo-farmacia">
+                FARMACIA<br />
+                &quot;RAMIREZ&quot;</td>
+            <td class="auto-style4" >
+                </td>
+            <td class="auto-style4" >
+             
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="menu-grande">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Principal.aspx" Text="Inicio" Value="Inicio">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Mantenimiento" Value="Mantenimiento">
+                            <asp:MenuItem NavigateUrl="~/ABM de Articulo.aspx" Text="ABM de Artículos"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/ABM de Categoria.aspx" Text="ABM de Categorías">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/ABM de Cliente.aspx" Text="ABM de Clientes" Value="Usuarios">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Listados" Value="Listados">
+                            <asp:MenuItem Text="Listado Interactivo de Artículos" NavigateUrl="~/Listado Interactivo Articulos.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Listado Interactivo de Clientes" 
+                                NavigateUrl="~/Listado Interactivo Clientes.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Ventas" Value="Ventas">
+                            <asp:MenuItem NavigateUrl="~/Alta de Venta.aspx" 
+                                Text="Alta de Venta" Value="Alta de Venta">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Seguimiento de Venta.aspx" 
+                                Text="Seguimiento de Ventas" 
+                                Value="Listado de Ventas"></asp:MenuItem>
+                            
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Logueo Empleado.aspx" Text="Deslogueo" Value="Deslogueo">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+                </td>
+        </tr>
+        <tr>
+            <td class="auto-style5" >
+                </td>
+            <td colspan="2" class="auto-style6">
+             
+                <br />
+                <br />
+                </td>
+        </tr>
+       <tr>
+    <td colspan="3" style="text-align:center;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </td>
+</tr>
+    </table>
+    </form>
+</body>
+</html>
